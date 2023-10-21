@@ -17,6 +17,7 @@ const Favoritos = (props) => {
         }
         else {
             setFavoritos((favoritos) => [...favoritos, creaciones[props.id - 1]])
+            localStorage.setItem('favoritos', JSON.stringify(...favoritos, favoritos))
         }
     }
 
