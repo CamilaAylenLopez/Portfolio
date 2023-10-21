@@ -8,23 +8,26 @@ import InfoMia from './components/InfoMia'
 import MisCreaciones from './components/MisCreaciones'
 import Layout from './components/Layout'
 import FavoritosProvider from './Context/FavoritosContext'
+import CreacionesProvider from './Context/CreacionesContext'
 
 function App() {
   return (
     <div>
-      <FavoritosProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Layout />}>
-              <Route index element={<Home />}></Route>
-              <Route path='/Favoritos' element={<Favoritos />}></Route>
-              <Route path='/InfoMia' element={<InfoMia />}></Route>
-              <Route path='/MisCreaciones' element={<MisCreaciones />}></Route>
-              <Route path='*' element={<h1>Not Found</h1>} ></Route>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </FavoritosProvider>
+      <CreacionesProvider>
+        <FavoritosProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Layout />}>
+                <Route index element={<Home />}></Route>
+                <Route path='/Favoritos' element={<Favoritos />}></Route>
+                <Route path='/InfoMia' element={<InfoMia />}></Route>
+                <Route path='/MisCreaciones' element={<MisCreaciones />}></Route>
+                <Route path='*' element={<h1>Not Found</h1>} ></Route>
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </FavoritosProvider>
+      </CreacionesProvider>
     </div>
   );
 }

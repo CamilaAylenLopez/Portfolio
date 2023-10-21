@@ -1,14 +1,33 @@
 
-import React from "react"
-
+import './Home.css'
+import React from 'react'
+import { useState, useEffect, useContext } from 'react';
+import { FavoritosContext } from "../Context/FavoritosContext";
+import { CreacionesContext } from "../Context/CreacionesContext";
 
 const MisCreaciones = (props) => {
+  const { setFavoritos } = useContext(FavoritosContext);
+  const { creaciones, setCreaciones  } = useContext(CreacionesContext)
 
-  return (
-    <div>
-      <h1 className='centrarJust titulo'>HOLA MUNDO</h1>
-    </div>
-  )
+  const agregarFavoritos = (id) => {
+      setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]])
+  }
+
+return (
+  <div className='margengrande'>
+      {creaciones.map((creaciones) => 
+          <section className='creacion' key={creaciones.id}>
+              <p>{creaciones.id}</p>
+              <p>{creaciones.nombre}</p>
+              <p>{creaciones.descripcion}</p>
+              <p>{creaciones.leguaje}</p>
+              <p>{creaciones.fecha}</p>
+              <p>{creaciones.respositorio}</p>
+              <button onClick={() => agregarFavoritos(creaciones.id)}>Agregar a favoritos</button>
+          </section>
+      )}
+  </div>
+)
 }
 
 export default MisCreaciones
