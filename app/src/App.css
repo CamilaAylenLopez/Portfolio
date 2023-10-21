@@ -14,7 +14,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://img.freepik.com/fotos-premium/fondo-purpurina-azul_280388-2193.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616426880904-ad53d12ff61a?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJyaWxsbyUyMG5lZ3JvfGVufDB8fDB8fHww');
   background-attachment: fixed;
   background-blend-mode: darken;
   background-repeat: no-repeat;

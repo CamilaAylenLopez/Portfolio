@@ -24,3 +24,14 @@ h1, h2, h4{
 .margenTopInicial{
     margin-top: 4rem;
 }
+
+.creacion{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-top: 2px solid white;
+    margin-top: 20px;
+}
+
+p{
+    color: #ffffff;
+}

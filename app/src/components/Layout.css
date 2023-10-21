@@ -17,3 +17,41 @@
     justify-content: flex-end;
     align-items: flex-start;
 }
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    z-index: 100;
+}
+
+.horizontal {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.espacioFooter{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.redPosicion{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
