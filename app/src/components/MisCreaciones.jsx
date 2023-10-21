@@ -20,6 +20,7 @@ const MisCreaciones = (props) => {
 
   return (
     <div className='margengrande bottom'>
+      <h1>Todos mis proyectos</h1>
       {obtenerPosiciones().map((creacion) => (
         <section className='creacion' key={creacion.id}>
           <p>{creacion.id}</p>
