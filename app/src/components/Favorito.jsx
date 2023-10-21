@@ -1,25 +1,28 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
-import { FavoritosContext } from "../Context/FavoritosContext";
-import { CreacionesContext } from "../Context/CreacionesContext";
+import { FavoritosContext } from "../Context/FavoritosContext"
+import { CreacionesContext } from "../Context/CreacionesContext"
 
 const Favoritos = (props) => {
     const { creaciones, setCreaciones } = useContext(CreacionesContext)
     const { favoritos, setFavoritos } = useContext(FavoritosContext);
-    const [texto, setTexto] = useState('Agregar a favoritos')
+    const estaEnFavoritos = favoritos.some((element) => element.id === props.id)
 
-    const indice = favoritos.findIndex((element) => element.id.props === favoritos.id);
-    if (indice !== -1) {
-        favoritos.splice(indice, 1);
-        setTexto('Eliminar de favoritos')
-    }
-    else{
-        setFavoritos((favoritos) => [...favoritos, creaciones[props.id - 1]])
+    const accionBoton = () => {
+        if (estaEnFavoritos) {
+            const indice = favoritos.findIndex((element) => element.id.props === favoritos.id)
+            const nuev = [...favoritos]
+            nuev.splice(indice, 1)
+            setFavoritos(nuev)
+        }
+        else {
+            setFavoritos((favoritos) => [...favoritos, creaciones[props.id - 1]])
+        }
     }
 
     return (
         <div>
-            <button>{texto}</button>
+            <button onClick={accionBoton}>{estaEnFavoritos ? 'Eliminar de favoritos' : 'Agregar a favoritos'}</button>
         </div>
     )
 }

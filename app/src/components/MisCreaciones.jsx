@@ -1,26 +1,21 @@
 import './Home.css'
+import Favorito from './Favorito';
 import React, { useState, useContext } from 'react';
-import { FavoritosContext } from "../Context/FavoritosContext";
 import { CreacionesContext } from "../Context/CreacionesContext";
 
 const MisCreaciones = (props) => {
-  const { setFavoritos } = useContext(FavoritosContext);
-  const { creaciones, setCreaciones  } = useContext(CreacionesContext);
-  const elementosPorPagina = 5;
-  const [paginaActual, setPaginaActual] = useState(1);
-
-  const agregarFavoritos = (id) => {
-    setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]]);
-  }
+  const { creaciones, setCreaciones } = useContext(CreacionesContext)
+  const elementosPorPagina = 5
+  const [paginaActual, setPaginaActual] = useState(1)
 
   const obtenerPosiciones = () => {
-    const ultimoElemento = paginaActual * elementosPorPagina;
-    const primerElemento = ultimoElemento - elementosPorPagina;
-    return creaciones.slice(primerElemento, ultimoElemento);
+    const ultimoElemento = paginaActual * elementosPorPagina
+    const primerElemento = ultimoElemento - elementosPorPagina
+    return creaciones.slice(primerElemento, ultimoElemento)
   }
 
   const cambiarPagina = (siguientePag) => {
-    setPaginaActual(siguientePag);
+    setPaginaActual(siguientePag)
   }
 
   return (
@@ -33,18 +28,14 @@ const MisCreaciones = (props) => {
           <p>{creacion.leguaje}</p>
           <p>{creacion.fecha}</p>
           <p>{creacion.respositorio}</p>
-          <button onClick={() => agregarFavoritos(creacion.id)}>Agregar a favoritos</button>
+          <Favorito id={creaciones.id}/>
         </section>
       ))}
 
       <div className="paginacion">
-        <button onClick={() => cambiarPagina(paginaActual - 1)} disabled={paginaActual === 1}>
-          Anterior
-        </button>
+        <button onClick={() => cambiarPagina(paginaActual - 1)} disabled={paginaActual === 1}>Anterior</button>
         <span>Página {paginaActual}</span>
-        <button onClick={() => cambiarPagina(paginaActual + 1)} disabled={paginaActual * elementosPorPagina >= creaciones.length}>
-          Siguiente
-        </button>
+        <button onClick={() => cambiarPagina(paginaActual + 1)} disabled={paginaActual * elementosPorPagina >= creaciones.length}>Siguiente</button>
       </div>
     </div>
   )

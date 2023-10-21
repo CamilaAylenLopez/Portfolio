@@ -2,17 +2,11 @@ import './Home.css'
 import React from 'react'
 import { useState, useEffect, useContext } from 'react';
 import Titulo from './Titulo'
-import Favorito from './Favorito';
-import { FavoritosContext } from "../Context/FavoritosContext";
-import { CreacionesContext } from "../Context/CreacionesContext";
+import Favorito from './Favorito'
+import { CreacionesContext } from "../Context/CreacionesContext"
 
 const Home = (props) => {
-    const { setFavoritos } = useContext(FavoritosContext);
     const { creaciones, setCreaciones  } = useContext(CreacionesContext)
-
-    const agregarFavoritos = (id) => {
-        setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]])
-    }
 
   return (
     <div>
