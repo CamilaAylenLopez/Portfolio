@@ -1,0 +1,26 @@
+@font-face{
+    font-family: 'NextBro';
+    src: local('NextBro'), url(../assets/Fonts/next_bro/NextBro.otf) format('opentype');
+  }
+
+h1, h2, h4{
+    text-align: center;
+}
+
+.centrarJust{
+    display: flex;
+    justify-content: center;
+}
+
+.tituloPrincipal {
+    display: flex;
+    justify-content:flex-start;
+    font-family: NextBro;
+    font-size: 9rem;
+    color: #ffffff;
+    margin-top: 7rem;
+}
+
+.margenTopInicial{
+    margin-top: 4rem;
+}

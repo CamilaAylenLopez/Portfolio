@@ -1,0 +1,19 @@
+.linkEstilo {
+    color: black;
+    text-decoration-line: none;
+}
+
+.espacio{
+    margin-right: 2rem;
+}
+
+.imagenTamaño{
+    width: 8%;
+    padding: 0%;
+}
+
+.derecha{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
