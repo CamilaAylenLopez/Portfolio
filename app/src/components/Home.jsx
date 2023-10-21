@@ -9,7 +9,7 @@ const Home = (props) => {
     const { creaciones, setCreaciones  } = useContext(CreacionesContext)
 
   return (
-    <div>
+    <div className='bottom'>
         <section>
             <Titulo/>
         </section>
