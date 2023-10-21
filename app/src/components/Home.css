@@ -1,47 +1,74 @@
-@font-face{
+@font-face {
     font-family: 'NextBro';
     src: local('NextBro'), url(../assets/Fonts/next_bro/NextBro.otf) format('opentype');
-  }
+}
 
-h1, h2, h4{
+h1,
+h2,
+h4 {
     text-align: center;
 }
 
-.centrarJust{
+.centrarJust {
     display: flex;
     justify-content: center;
 }
 
 .tituloPrincipal {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     font-family: NextBro;
     font-size: 9rem;
     color: #ffffff;
     margin-top: 7rem;
 }
 
-.margenTopInicial{
+.margenTopInicial {
     margin-top: 4rem;
 }
 
-.creacion{
+.creacion {
     margin-left: 5rem;
     margin-right: 5rem;
     border-top: 2px solid white;
     margin-top: 20px;
 }
 
-p{
+p {
     color: #ffffff;
 }
 
-.margengrande{
+.margengrande {
     margin-top: 10rem;
     color: #ffffff;
 }
 
-.blando{
+.blando {
     margin-top: 10rem;
     color: #ffffff;
+}
+
+.bottom {
+    margin-bottom: 10rem;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.paginacion button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.paginacion button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

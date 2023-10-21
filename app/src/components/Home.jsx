@@ -2,6 +2,7 @@ import './Home.css'
 import React from 'react'
 import { useState, useEffect, useContext } from 'react';
 import Titulo from './Titulo'
+import Favorito from './Favorito';
 import { FavoritosContext } from "../Context/FavoritosContext";
 import { CreacionesContext } from "../Context/CreacionesContext";
 
@@ -26,7 +27,7 @@ const Home = (props) => {
                 <p>{creaciones.leguaje}</p>
                 <p>{creaciones.fecha}</p>
                 <p>{creaciones.respositorio}</p>
-                <button onClick={() => agregarFavoritos(creaciones.id)}>Agregar a favoritos</button>
+                <Favorito id={creaciones.id}/>
             </section>
         )}
     </div>

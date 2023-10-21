@@ -11,8 +11,8 @@ const Favoritos = (props) => {
   console.log('favoritos tiene: ',favoritos)
   return (
     <div className='margengrande'>
-      <h1 className='blando'>HOLA MUNDO</h1>
-      {favoritos.length > 1 ? ( favoritos.map((favoritos) => 
+      {favoritos.length > 1 ? (
+        favoritos.map((favoritos) => 
             <section className='creacion' key={favoritos.id}>
                 <p>{favoritos.id}</p>
                 <p>{favoritos.nombre}</p>
@@ -22,7 +22,7 @@ const Favoritos = (props) => {
                 <p>{favoritos.respositorio}</p>
                 <button onClick={() => eliminarFavoritos(favoritos.id)}>Eliminar de favoritos</button>
             </section>
-        )) : 
+        )) : favoritos.length === 1 ? (
         <>
         <section className='creacion'>
                 <p>{favoritos.id}</p>
@@ -33,7 +33,10 @@ const Favoritos = (props) => {
                 <p>{favoritos.respositorio}</p>
                 <button onClick={() => eliminarFavoritos(favoritos.id)}>Eliminar de favoritos</button>
             </section>
-        </>}
+        </>) : (
+          <><h1>No hay elementos</h1></>
+        )
+        }
     </div>
   )
 }

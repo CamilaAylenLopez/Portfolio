@@ -1,33 +1,53 @@
-
 import './Home.css'
-import React from 'react'
-import { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { FavoritosContext } from "../Context/FavoritosContext";
 import { CreacionesContext } from "../Context/CreacionesContext";
 
 const MisCreaciones = (props) => {
   const { setFavoritos } = useContext(FavoritosContext);
-  const { creaciones, setCreaciones  } = useContext(CreacionesContext)
+  const { creaciones, setCreaciones  } = useContext(CreacionesContext);
+  const elementosPorPagina = 5;
+  const [paginaActual, setPaginaActual] = useState(1);
 
   const agregarFavoritos = (id) => {
-      setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]])
+    setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]]);
   }
 
-return (
-  <div className='margengrande'>
-      {creaciones.map((creaciones) => 
-          <section className='creacion' key={creaciones.id}>
-              <p>{creaciones.id}</p>
-              <p>{creaciones.nombre}</p>
-              <p>{creaciones.descripcion}</p>
-              <p>{creaciones.leguaje}</p>
-              <p>{creaciones.fecha}</p>
-              <p>{creaciones.respositorio}</p>
-              <button onClick={() => agregarFavoritos(creaciones.id)}>Agregar a favoritos</button>
-          </section>
-      )}
-  </div>
-)
+  const obtenerPosiciones = () => {
+    const ultimoElemento = paginaActual * elementosPorPagina;
+    const primerElemento = ultimoElemento - elementosPorPagina;
+    return creaciones.slice(primerElemento, ultimoElemento);
+  }
+
+  const cambiarPagina = (siguientePag) => {
+    setPaginaActual(siguientePag);
+  }
+
+  return (
+    <div className='margengrande bottom'>
+      {obtenerPosiciones().map((creacion) => (
+        <section className='creacion' key={creacion.id}>
+          <p>{creacion.id}</p>
+          <p>{creacion.nombre}</p>
+          <p>{creacion.descripcion}</p>
+          <p>{creacion.leguaje}</p>
+          <p>{creacion.fecha}</p>
+          <p>{creacion.respositorio}</p>
+          <button onClick={() => agregarFavoritos(creacion.id)}>Agregar a favoritos</button>
+        </section>
+      ))}
+
+      <div className="paginacion">
+        <button onClick={() => cambiarPagina(paginaActual - 1)} disabled={paginaActual === 1}>
+          Anterior
+        </button>
+        <span>Página {paginaActual}</span>
+        <button onClick={() => cambiarPagina(paginaActual + 1)} disabled={paginaActual * elementosPorPagina >= creaciones.length}>
+          Siguiente
+        </button>
+      </div>
+    </div>
+  )
 }
 
-export default MisCreaciones
+export default MisCreaciones;
