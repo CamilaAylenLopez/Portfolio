@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Titulo from './Titulo'
 
 const Home = (props) => {
+    const [favoritos, setFavoritos] = useState([])
     const [creaciones, setCreaciones] = useState([{
         id: 1,
         nombre: 'Tu bibliteca',
@@ -57,7 +58,11 @@ const Home = (props) => {
         respositorio: 'https://github.com/CamilaAylenLopez/Portfolio_Camila_Lopez',
         imagen: null
       },
-      ])
+    ])
+
+    const agregarFavoritos = (id) => {
+        setFavoritos(creaciones[id - 1])
+    }
 
   return (
     <div>
@@ -65,13 +70,14 @@ const Home = (props) => {
             <Titulo/>
         </section>
         {creaciones.map((creaciones) => 
-            <section className='creacion'>
+            <section className='creacion' key={creaciones.id}>
                 <p>{creaciones.id}</p>
                 <p>{creaciones.nombre}</p>
                 <p>{creaciones.descripcion}</p>
                 <p>{creaciones.leguaje}</p>
                 <p>{creaciones.fecha}</p>
                 <p>{creaciones.respositorio}</p>
+                <button onClick={() => agregarFavoritos(creaciones.id)}>Agregar a favoritos</button>
             </section>
         )}
     </div>
