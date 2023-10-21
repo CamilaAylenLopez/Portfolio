@@ -64,9 +64,16 @@ const Home = (props) => {
         <section>
             <Titulo/>
         </section>
-        <section className='creacion'>
-            <p>HOLA MUNDO</p>
-        </section>
+        {creaciones.map((creaciones) => 
+            <section className='creacion'>
+                <p>{creaciones.id}</p>
+                <p>{creaciones.nombre}</p>
+                <p>{creaciones.descripcion}</p>
+                <p>{creaciones.leguaje}</p>
+                <p>{creaciones.fecha}</p>
+                <p>{creaciones.respositorio}</p>
+            </section>
+        )}
     </div>
   )
 }
