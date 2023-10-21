@@ -1,9 +1,11 @@
 import './Home.css'
-import React, { useState } from "react"
+import React from 'react'
+import { useState, useEffect, useContext } from 'react';
 import Titulo from './Titulo'
+import { FavoritosContext } from "../Context/FavoritosContext";
 
 const Home = (props) => {
-    const [favoritos, setFavoritos] = useState([])
+    const {setFavoritos} = useContext(FavoritosContext);
     const [creaciones, setCreaciones] = useState([{
         id: 1,
         nombre: 'Tu bibliteca',
@@ -61,7 +63,7 @@ const Home = (props) => {
     ])
 
     const agregarFavoritos = (id) => {
-        setFavoritos(creaciones[id - 1])
+        setFavoritos((favoritos) => [...favoritos, creaciones[id - 1]])
     }
 
   return (

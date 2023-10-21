@@ -5,15 +5,9 @@ import React from "react"
 const InfoMia = (props) => {
 
   return (
-
     <div>
-      <h1 className='centrarJust titulo'>Sopa de letras ecologica</h1>
-      <div className='centrarJust'>
-        <iframe allowfullscreen width="600" height="500" frameborder="0" src="https://es.educaplay.com/juego/15719979-sopa_ecologica.html"/>
-      </div>
-      
+      <h1 className='centrarJust titulo'>HOLA MUNDO</h1>
     </div>
-
   )
 }
 
