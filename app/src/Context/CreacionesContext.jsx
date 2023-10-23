@@ -5,7 +5,7 @@ export const CreacionesContext = React.createContext();
 const CreacionesProvider = (props) => {
     const [creaciones, setCreaciones] = React.useState([{
         id: 1,
-        nombre: 'Tu bibliteca',
+        nombre: 'Tu biblioteca',
         descripcion: 'Constaba de una página progrmada prinicpalmente con c#, la cual aparecian distintos libros cargados en una base de datos. En la pagína te podías logear o crear una cuenta, además de guardar tus libros favoritos, agregar libros, agregra personajes, poner reseñas, etc.',
         leguaje: 'c#',
         fecha: 'Fines de 2022',

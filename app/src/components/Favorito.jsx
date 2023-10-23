@@ -8,18 +8,23 @@ const Favoritos = (props) => {
     const { favoritos, setFavoritos } = useContext(FavoritosContext);
     const estaEnFavoritos = favoritos.some((element) => element.id === props.id)
 
-    const accionBoton = () => {
+    const accionBoton = async () => {
+        console.log(props)
         if (estaEnFavoritos) {
-            const indice = favoritos.findIndex((element) => element.id.props === favoritos.id)
+            const indice = favoritos.findIndex((element) => (element.id) === props.id)
+            console.log(indice)
             const nuev = [...favoritos]
             nuev.splice(indice, 1)
             setFavoritos(nuev)
         }
         else {
             setFavoritos((favoritos) => [...favoritos, creaciones[props.id - 1]])
-            localStorage.setItem('favoritos', JSON.stringify(...favoritos, favoritos))
+            // localStorage.setItem('favoritos', JSON.stringify(favoritos))
         }
     }
+    useEffect(()=>{
+        localStorage.setItem('favoritos', JSON.stringify(favoritos))
+      }, [favoritos])
 
     return (
         <div>
