@@ -9,7 +9,6 @@ const Favoritos = (props) => {
     const estaEnFavoritos = favoritos.some((element) => element.id === props.id)
 
     const accionBoton = async () => {
-        console.log(props)
         if (estaEnFavoritos) {
             const indice = favoritos.findIndex((element) => (element.id) === props.id)
             console.log(indice)
@@ -17,11 +16,18 @@ const Favoritos = (props) => {
             nuev.splice(indice, 1)
             setFavoritos(nuev)
         }
-        else {
+        else{
             setFavoritos((favoritos) => [...favoritos, creaciones[props.id - 1]])
-            // localStorage.setItem('favoritos', JSON.stringify(favoritos))
         }
     }
+    useEffect(() => {
+        // Cargar datos desde localStorage cuando el componente se monta
+        const storedFavoritos = JSON.parse(localStorage.getItem('favoritos'));
+        if (storedFavoritos) {
+          setFavoritos(storedFavoritos);
+        }
+      }, []);
+
     useEffect(()=>{
         localStorage.setItem('favoritos', JSON.stringify(favoritos))
       }, [favoritos])

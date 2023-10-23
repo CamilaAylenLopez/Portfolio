@@ -21,8 +21,8 @@ const Layout = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="justify-content-end">
                             <Link to={'/'} className='linkEstilo espacio'>Home</Link>
-                            <Link to={'/InfoMia'} className='linkEstilo espacio'>Información mia</Link>
-                            <Link to={'/MisCreaciones'} className='linkEstilo espacio'>Mis creaciones</Link>
+                            <Link to={'/InfoMia'} className='linkEstilo espacio'>Información Mia</Link>
+                            <Link to={'/MisCreaciones'} className='linkEstilo espacio'>Mis Creaciones</Link>
                             <Badge badgeContent={favoritos.length} color="primary">
                                 <Link to={'/Favoritos'} className='linkEstilo'>Favoritos</Link>
                             </Badge>
