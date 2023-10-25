@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css'
 import { useEffect, useContext } from 'react'
 import { FavoritosContext } from "../Context/FavoritosContext"
 import { CreacionesContext } from "../Context/CreacionesContext"
@@ -24,7 +25,7 @@ const Favoritos = (props) => {
 
     return (
         <div>
-            <button onClick={accionBoton}>{estaEnFavoritos ? 'Eliminar de favoritos' : 'Agregar a favoritos'}</button>
+            <button className='estiloBoton' onClick={accionBoton}>{estaEnFavoritos ? 'Eliminar de favoritos' : 'Agregar a favoritos'}</button>
         </div>
     )
 }
