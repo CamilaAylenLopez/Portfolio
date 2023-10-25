@@ -67,6 +67,15 @@ a{
     transition-property: border-radius;
 }
 
+.estiloBoton{
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 5rem;
+    padding: 0.5rem;
+    margin-top: 2rem;
+}
+
 p {
     color: #ffffff;
 }

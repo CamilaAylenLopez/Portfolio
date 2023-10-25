@@ -48,7 +48,7 @@ const Favoritos = (props) => {
               </div>
             </section>
           </>) : (
-        <><h1>No hay elementos</h1></>
+        <><h1>No hay elementos todavía</h1></>
       )
       }
     </div>
