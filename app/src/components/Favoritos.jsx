@@ -11,6 +11,7 @@ const Favoritos = (props) => {
 
   return (
     <div className='margengrande bottom'>
+      <h1>Tus favoritos</h1>
       {favoritos.length > 1 ? (
         favoritos.map((favoritos) =>
           <section className='creacion' key={favoritos.id}>
@@ -24,7 +25,7 @@ const Favoritos = (props) => {
                 <a className='linkRepositorio' href={favoritos.respositorio}>{favoritos.respositorio}</a>
                 <Favorito id={favoritos.id} />
               </div>
-              <div>
+              <div className='separacion'>
                 <img className='imagen' src={favoritos.imagen ? favoritos.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
               </div>
             </div>
@@ -42,7 +43,7 @@ const Favoritos = (props) => {
                   <a className='linkRepositorio' href={favoritos[0].respositorio}>{favoritos[0].respositorio}</a>
                   <Favorito id={favoritos[0].id} />
                 </div>
-                <div>
+                <div className='separacion'>
                   <img className='imagen' src={favoritos[0].imagen ? favoritos[0].imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
                 </div>
               </div>

@@ -33,7 +33,7 @@ const MisCreaciones = (props) => {
               <a className='linkRepositorio' href={creacion.respositorio}>{creacion.respositorio}</a>
               <Favorito id={creacion.id} />
             </div>
-            <div>
+            <div className='separacion'>
               <img className='imagen' src={creacion.imagen ? creacion.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
             </div>
           </div>
