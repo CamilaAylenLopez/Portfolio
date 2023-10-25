@@ -23,13 +23,20 @@ const MisCreaciones = (props) => {
       <h1>Todos mis proyectos</h1>
       {obtenerPosiciones().map((creacion) => (
         <section className='creacion' key={creacion.id}>
-          <p>{creacion.id}</p>
-          <p>{creacion.nombre}</p>
-          <p>{creacion.descripcion}</p>
-          <p>{creacion.leguaje}</p>
-          <p>{creacion.fecha}</p>
-          <p>{creacion.respositorio}</p>
-          <Favorito id={creaciones.id}/>
+          <div className='espacioCreacion rowHome'>
+            <div className='col-4'>
+              <p>● Proyecto {creacion.id}</p>
+              <p className='tituloProyecto'><b>{creacion.nombre}</b></p>
+              <p>{creacion.descripcion}</p>
+              <p>Lenguaje: {creacion.leguaje}</p>
+              <p>{creacion.fecha}</p>
+              <a className='linkRepositorio' href={creacion.respositorio}>{creacion.respositorio}</a>
+              <Favorito id={creacion.id} />
+            </div>
+            <div>
+              <img className='imagen' src={creacion.imagen ? creacion.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
+            </div>
+          </div>
         </section>
       ))}
 

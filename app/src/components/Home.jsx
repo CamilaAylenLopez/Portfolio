@@ -15,13 +15,21 @@ const Home = (props) => {
         </section>
         {creaciones.slice(0, 6).map((creaciones) => 
             <section className='creacion' key={creaciones.id}>
-                <p>{creaciones.id}</p>
-                <p>{creaciones.nombre}</p>
-                <p>{creaciones.descripcion}</p>
-                <p>{creaciones.leguaje}</p>
-                <p>{creaciones.fecha}</p>
-                <p>{creaciones.respositorio}</p>
-                <Favorito id={creaciones.id}/>
+                <div className='espacioCreacion rowHome'>
+                    <div className='col-4'>
+                        <p>● Proyecto {creaciones.id}</p>
+                        <p className='tituloProyecto'><b>{creaciones.nombre}</b></p>
+                        <p>{creaciones.descripcion}</p>
+                        <p>Lenguaje: {creaciones.leguaje}</p>
+                        <p>{creaciones.fecha}</p>
+                        <a className='linkRepositorio' href={creaciones.respositorio}>{creaciones.respositorio}</a>
+                        <Favorito id={creaciones.id}/>
+                    </div>
+                    <div>
+                        <img className='imagen' src={creaciones.imagen ? creaciones.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'}/>
+                    </div>
+                </div>
+                
             </section>
         )}
     </div>

@@ -14,25 +14,38 @@ const Favoritos = (props) => {
       {favoritos.length > 1 ? (
         favoritos.map((favoritos) =>
           <section className='creacion' key={favoritos.id}>
-            <p>{favoritos.id}</p>
-            <p>{favoritos.nombre}</p>
-            <p>{favoritos.descripcion}</p>
-            <p>{favoritos.leguaje}</p>
-            <p>{favoritos.fecha}</p>
-            <p>{favoritos.respositorio}</p>
-            <Favorito id={favoritos.id} />
+            <div className='espacioCreacion rowHome'>
+              <div className='col-4'>
+                <p>● Proyecto {favoritos.id}</p>
+                <p className='tituloProyecto'><b>{favoritos.nombre}</b></p>
+                <p>{favoritos.descripcion}</p>
+                <p>Lenguaje: {favoritos.leguaje}</p>
+                <p>{favoritos.fecha}</p>
+                <a className='linkRepositorio' href={favoritos.respositorio}>{favoritos.respositorio}</a>
+                <Favorito id={favoritos.id} />
+              </div>
+              <div>
+                <img className='imagen' src={favoritos.imagen ? favoritos.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
+              </div>
+            </div>
           </section>
         )) : favoritos.length === 1 ? (
           <>
             <section className='creacion'>
-              <h1>HOLA MUNDO</h1>
-              <p>{favoritos[0].id}</p>
-              <p>{favoritos[0].nombre}</p>
-              <p>{favoritos[0].descripcion}</p>
-              <p>{favoritos[0].leguaje}</p>
-              <p>{favoritos[0].fecha}</p>
-              <p>{favoritos[0].respositorio}</p>
-              <Favorito id={favoritos[0].id} />
+              <div className='espacioCreacion rowHome'>
+                <div className='col-4'>
+                  <p>● Proyecto {favoritos[0].id}</p>
+                  <p className='tituloProyecto'><b>{favoritos[0].nombre}</b></p>
+                  <p>{favoritos[0].descripcion}</p>
+                  <p>Lenguaje: {favoritos[0].leguaje}</p>
+                  <p>{favoritos[0].fecha}</p>
+                  <a className='linkRepositorio' href={favoritos[0].respositorio}>{favoritos[0].respositorio}</a>
+                  <Favorito id={favoritos[0].id} />
+                </div>
+                <div>
+                  <img className='imagen' src={favoritos[0].imagen ? favoritos[0].imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
+                </div>
+              </div>
             </section>
           </>) : (
         <><h1>No hay elementos</h1></>
