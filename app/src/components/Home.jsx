@@ -1,6 +1,6 @@
 import './Home.css'
 import React from 'react'
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import Titulo from './Titulo'
 import Favorito from './Favorito'
 import { CreacionesContext } from "../Context/CreacionesContext"
