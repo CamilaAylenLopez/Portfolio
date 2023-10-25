@@ -22,7 +22,7 @@ const Favoritos = (props) => {
                 <p>{favoritos.descripcion}</p>
                 <p>Lenguaje: {favoritos.leguaje}</p>
                 <p>{favoritos.fecha}</p>
-                <a className='linkRepositorio' href={favoritos.respositorio}>{favoritos.respositorio}</a>
+                <a className='linkRepositorio' href={favoritos.respositorio} target="_blank">{favoritos.respositorio}</a>
                 <Favorito id={favoritos.id} />
               </div>
               <div className='separacion'>
@@ -40,7 +40,7 @@ const Favoritos = (props) => {
                   <p>{favoritos[0].descripcion}</p>
                   <p>Lenguaje: {favoritos[0].leguaje}</p>
                   <p>{favoritos[0].fecha}</p>
-                  <a className='linkRepositorio' href={favoritos[0].respositorio}>{favoritos[0].respositorio}</a>
+                  <a className='linkRepositorio' href={favoritos[0].respositorio} target="_blank">{favoritos[0].respositorio}</a>
                   <Favorito id={favoritos[0].id} />
                 </div>
                 <div className='separacion'>

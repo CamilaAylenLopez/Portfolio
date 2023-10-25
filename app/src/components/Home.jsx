@@ -22,7 +22,7 @@ const Home = (props) => {
                         <p>{creaciones.descripcion}</p>
                         <p>Lenguaje: {creaciones.leguaje}</p>
                         <p>{creaciones.fecha}</p>
-                        <a className='linkRepositorio' href={creaciones.respositorio}>{creaciones.respositorio}</a>
+                        <a className='linkRepositorio' href={creaciones.respositorio} target="_blank">{creaciones.respositorio}</a>
                         <Favorito id={creaciones.id}/>
                     </div>
                     <div className='separacion'>

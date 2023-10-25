@@ -30,7 +30,7 @@ const MisCreaciones = (props) => {
               <p>{creacion.descripcion}</p>
               <p>Lenguaje: {creacion.leguaje}</p>
               <p>{creacion.fecha}</p>
-              <a className='linkRepositorio' href={creacion.respositorio}>{creacion.respositorio}</a>
+              <a className='linkRepositorio' href={creacion.respositorio} target="_blank">{creacion.respositorio}</a>
               <Favorito id={creacion.id} />
             </div>
             <div className='separacion'>
