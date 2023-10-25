@@ -57,14 +57,23 @@ a{
 }
 
 .imagen{
-    margin-left: 30rem;
+    margin-left: 10rem;
     min-width: 25rem;
     max-width: 30rem;
+    max-height: 30rem;
     transition: border-radius .275s cubic-bezier(.47, 0, .745, .715);
     transition-duration: 0.275s;
     transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
     transition-delay: 0s;
     transition-property: border-radius;
+}
+
+.separacion{
+    margin-left: 20rem;
+    border-left: 2px solid white;
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
 
 .estiloBoton{

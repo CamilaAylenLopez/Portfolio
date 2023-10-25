@@ -25,7 +25,7 @@ const Home = (props) => {
                         <a className='linkRepositorio' href={creaciones.respositorio}>{creaciones.respositorio}</a>
                         <Favorito id={creaciones.id}/>
                     </div>
-                    <div>
+                    <div className='separacion'>
                         <img className='imagen' src={creaciones.imagen ? creaciones.imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'}/>
                     </div>
                 </div>
