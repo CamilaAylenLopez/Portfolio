@@ -3,8 +3,8 @@ import React from 'react';
 export const UsuarioContext = React.createContext();
 
 const UsuarioProvider = (props) => {
-    const [usuario, setUsuario] = React.useState(JSON.parse(sessionStorage.getItem('usuario')) || []);
-    const [contraseña, setContraseña] = React.useState(JSON.parse(sessionStorage.getItem('contraseña')) || []);
+    const [usuario, setUsuario] = React.useState(JSON.parse(sessionStorage.getItem('usuario')) || "");
+    const [contraseña, setContraseña] = React.useState(JSON.parse(sessionStorage.getItem('contraseña')) || "");
 
     
     React.useEffect(()=>{

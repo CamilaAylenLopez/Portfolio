@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useEffect, useContext } from 'react'
 import { FavoritosContext } from "../Context/FavoritosContext"
 import { CreacionesContext } from "../Context/CreacionesContext"
@@ -10,6 +12,7 @@ const Favoritos = (props) => {
     const { creaciones } = useContext(CreacionesContext)
     const { favoritos, setFavoritos } = useContext(FavoritosContext);
     const estaEnFavoritos = favoritos.some((element) => element.id === props.id)
+    // const { usuario, setUsuario, contraseña, setContraseña } = useContext(UsuarioContext)
     const { usuario, setUsuario } = useContext(CreacionesContext)
     const { contraseña, setContraseña} = useContext(CreacionesContext)
     const [showModal, setShowModal] = useState(false)
@@ -32,8 +35,12 @@ const Favoritos = (props) => {
         } else {
             setShowModal(true)
         }
-    } 
-
+    }
+    const HandleSubmit = () =>{
+        // setUsuario(usuario)
+        // setContraseña(contraseña)
+        // setShowModal(false)
+    }
 
     return (
         <div>
@@ -42,7 +49,21 @@ const Favoritos = (props) => {
                     <Modal.Title>Inicie sesion</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="d-flex flex-column text-center">
+                    <Form onSubmit={HandleSubmit()} >
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+                    {/* <div className="d-flex flex-column text-center">
                         <form>
                             <div className="form-group">
                                 <input value={usuario} type="email" className="form-control" id="email1" placeholder="Your email address..." />
@@ -65,7 +86,7 @@ const Favoritos = (props) => {
                                 <i className="fab fa-linkedin"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </Modal.Body>
             </Modal>
 
