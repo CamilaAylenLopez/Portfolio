@@ -3,8 +3,8 @@ import React from 'react';
 export const FavoritosContext = React.createContext();
 
 const FavoritosProvider = (props) => {
-    const [favoritos, setFavoritos] = React.useState(JSON.parse(localStorage.getItem('favoritos')) || []);
-    
+    const [favoritos, setFavoritos] = React.useState([]);
+
     React.useEffect(()=>{
         localStorage.setItem('favoritos', JSON.stringify(favoritos))
     }, [favoritos])

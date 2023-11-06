@@ -9,12 +9,14 @@ import MisCreaciones from './components/MisCreaciones'
 import Layout from './components/Layout'
 import FavoritosProvider from './Context/FavoritosContext'
 import CreacionesProvider from './Context/CreacionesContext'
+import UsuarioProvider from './Context/UsuarioContext'
 
 function App() {
   return (
     <div>
       <CreacionesProvider>
         <FavoritosProvider>
+          <UsuarioProvider>
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<Layout />}>
@@ -26,6 +28,7 @@ function App() {
               </Route>
             </Routes>
           </BrowserRouter>
+          </UsuarioProvider>
         </FavoritosProvider>
       </CreacionesProvider>
     </div>

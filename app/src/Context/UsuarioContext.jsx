@@ -3,16 +3,16 @@ import React from 'react';
 export const UsuarioContext = React.createContext();
 
 const UsuarioProvider = (props) => {
-    const [usuario, setUsuario] = React.useState(JSON.parse(sessionStorage.getItem('usuario')) || "");
-    const [contraseña, setContraseña] = React.useState(JSON.parse(sessionStorage.getItem('contraseña')) || "");
+    const [usuario, setUsuario] = React.useState({
+        mail: '',
+        contrasenia: ''
+    });
 
-    
-    React.useEffect(()=>{
-        sessionStorage.setItem('usuario', JSON.stringify(usuario))
-        sessionStorage.setItem('contraseña', JSON.stringify(contraseña))
-    }, [usuario, contraseña])
+    React.useEffect(() => {
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+    }, [usuario]);
 
-    return <UsuarioContext.Provider value={{usuario, setUsuario, contraseña, setContraseña}}>{props.children}</UsuarioContext.Provider>
+    return <UsuarioContext.Provider value={{ usuario, setUsuario }}>{props.children}</UsuarioContext.Provider>;
 }
 
 export default UsuarioProvider;

@@ -12,16 +12,17 @@ const Favoritos = (props) => {
     const { creaciones } = useContext(CreacionesContext)
     const { favoritos, setFavoritos } = useContext(FavoritosContext);
     const estaEnFavoritos = favoritos.some((element) => element.id === props.id)
-    // const { usuario, setUsuario, contraseña, setContraseña } = useContext(UsuarioContext)
-    const { usuario, setUsuario } = useContext(CreacionesContext)
-    const { contraseña, setContraseña} = useContext(CreacionesContext)
-    const [showModal, setShowModal] = useState(false)
+    const { usuario, setUsuario } = useContext(UsuarioContext)
+    const [showModal, setShowModal] = useState(false);
+    const [email, setEmail] = useState('')
+    const [contrasenia, setContrasenia] = useState('')
 
-    const handleClose = () => setShowModal(false);
+    const handleClose = () => {
+        setShowModal(false);
+    }
 
     const accionBoton = async () => {
-
-        if (usuario != null) {
+        if (usuario.mail != '' && usuario.contrasenia != '') {
             if (estaEnFavoritos) {
                 const indice = favoritos.findIndex((element) => (element.id) === props.id)
                 console.log(indice)
@@ -36,116 +37,55 @@ const Favoritos = (props) => {
             setShowModal(true)
         }
     }
-    const HandleSubmit = () =>{
-        // setUsuario(usuario)
-        // setContraseña(contraseña)
-        // setShowModal(false)
+
+    
+    const HandleSubmit = () => {
+        setShowModal(false)
+        setUsuario({
+            mail: email,
+            contrasenia: contrasenia
+        })
     }
 
     return (
         <div>
             <Modal show={showModal} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Inicie sesion</Modal.Title>
+                    <Modal.Title>Login in</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form onSubmit={HandleSubmit()} >
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                    <Form>
+                        <Form.Group controlId="formBasicName">
+                            <Form.Label>Mail</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Mail..."
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Contraseña</Form.Label>
+                            <Form.Control
+                                 type="password"
+                                 placeholder="Contraseña..."
+                                 value={contrasenia}
+                                 onChange={(e) => setContrasenia(e.target.value)}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
                     </Form>
-                    {/* <div className="d-flex flex-column text-center">
-                        <form>
-                            <div className="form-group">
-                                <input value={usuario} type="email" className="form-control" id="email1" placeholder="Your email address..." />
-                            </div>
-                            <div className="form-group">
-                                <input value={contraseña} type="password" className="form-control" id="password1" placeholder="Your password..." />
-                            </div>
-                            <button type="button" className="btn btn-info btn-block btn-round" onClick={handleClose}>Login</button>
-                        </form>
-
-                        <div className="text-center text-muted delimiter">or use a social network</div>
-                        <div className="d-flex justify-content-center social-buttons">
-                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                <i className="fab fa-twitter"></i>
-                            </button>
-                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
-                                <i className="fab fa-facebook"></i>
-                            </button>
-                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
-                                <i className="fab fa-linkedin"></i>
-                            </button>
-                        </div>
-                    </div> */}
                 </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cerrar
+                    </Button>
+                    <Button variant="primary" onClick={HandleSubmit}>
+                        Enviar
+                    </Button>
+                </Modal.Footer>
             </Modal>
 
             <div>
                 <button className='estiloBoton' onClick={accionBoton}>{estaEnFavoritos ? 'Eliminar de favoritos' : 'Agregar a favoritos'}</button>
             </div>
-            {/* {showModal && (
-                <div className="modal">
-                    <div className="container">
-                        <button type="button" className="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">
-                            Login
-                        </button>
-                    </div>
-
-                    <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered" role="document">
-                            <div className="modal-content">
-                                <div className="modal-header border-bottom-0">
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div className="modal-body">
-                                    <div className="form-title text-center">
-                                        <h4>Login</h4>
-                                    </div>
-                                    <div className="d-flex flex-column text-center">
-                                        <form>
-                                            <div className="form-group">
-                                                <input type="email" className="form-control" id="email1" placeholder="Your email address..." />
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="password" className="form-control" id="password1" placeholder="Your password..." />
-                                            </div>
-                                            <button type="button" className="btn btn-info btn-block btn-round">Login</button>
-                                        </form>
-
-                                        <div className="text-center text-muted delimiter">or use a social network</div>
-                                        <div className="d-flex justify-content-center social-buttons">
-                                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                                <i className="fab fa-twitter"></i>
-                                            </button>
-                                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
-                                                <i className="fab fa-facebook"></i>
-                                            </button>
-                                            <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
-                                                <i className="fab fa-linkedin"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="modal-footer d-flex justify-content-center">
-                                <div className="signup-section">Not a member yet? <a href="#a" className="text-info"> Sign Up</a>.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )} */}
         </div>
     )
 }
