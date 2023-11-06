@@ -44,7 +44,7 @@ const Favoritos = (props) => {
                   <Favorito id={favoritos[0].id} />
                 </div>
                 <div className='separacion'>
-                  <img className='imagen' src={favoritos[0].imagen ? favoritos[0].imagen : 'https://www.ciudaddemascotas.com/pub/media/wysiwyg/BlogImages/Junio2016/gato-feliz.jpg'} />
+                  <img className='imagen' src={favoritos[0].imagen ? favoritos[0].imagen : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'} />
                 </div>
               </div>
             </section>
