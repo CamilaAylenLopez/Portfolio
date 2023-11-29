@@ -16,7 +16,7 @@ const Home = (props) => {
         {creaciones.slice(0, 6).map((creaciones) => 
             <section className='creacion' key={creaciones.id}>
                 <div className='espacioCreacion rowHome'>
-                    <div className='col-4'>
+                    <div className='col-lg-4 col-md-12 tamanio'>
                         <p>● Proyecto {creaciones.id}</p>
                         <p className='tituloProyecto'><b>{creaciones.nombre}</b></p>
                         <p>{creaciones.descripcion}</p>
