@@ -35,7 +35,7 @@ const Layout = () => {
             </div>
             <footer>
                 <div className='horizontal'>
-                    <div className="responsiveSiteFooter__socialLinkWrapper col-6">
+                    <div className="responsiveSiteFooter__socialLinkWrapper col-lg-6 col-md-12">
                         <h5 className="responsiveSiteFooter__heading">Mis redes sociales</h5>
                         <div className='horizontaldos'>
                             <div className='espacioFooter'>

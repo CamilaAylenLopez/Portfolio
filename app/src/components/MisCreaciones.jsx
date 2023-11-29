@@ -24,7 +24,7 @@ const MisCreaciones = (props) => {
       {obtenerPosiciones().map((creacion) => (
         <section className='creacion' key={creacion.id}>
           <div className='espacioCreacion rowHome'>
-            <div className='col-4'>
+            <div className='col-lg-4 col-md-12 tamanio'>
               <p>● Proyecto {creacion.id}</p>
               <p className='tituloProyecto'><b>{creacion.nombre}</b></p>
               <p>{creacion.descripcion}</p>

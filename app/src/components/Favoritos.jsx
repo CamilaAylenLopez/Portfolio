@@ -16,7 +16,7 @@ const Favoritos = (props) => {
         favoritos.map((favoritos) =>
           <section className='creacion' key={favoritos.id}>
             <div className='espacioCreacion rowHome'>
-              <div className='col-4'>
+              <div className='col-lg-4 col-md-12 tamanio'>
                 <p>● Proyecto {favoritos.id}</p>
                 <p className='tituloProyecto'><b>{favoritos.nombre}</b></p>
                 <p>{favoritos.descripcion}</p>
