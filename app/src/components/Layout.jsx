@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import React from "react"
 import { Link, Outlet } from "react-router-dom"
 import Container from 'react-bootstrap/Container'
@@ -11,7 +11,7 @@ import { FavoritosContext } from "../Context/FavoritosContext"
 import Badge from '@mui/material/Badge'
 
 const Layout = () => {
-    const { favoritos, setFavoritos } = useContext(FavoritosContext)
+    const { favoritos } = useContext(FavoritosContext)
     return (
         <div className="layout-container">
             <Navbar expand="lg" className="bg-body-tertiary fixed-top">

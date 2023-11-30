@@ -1,16 +1,20 @@
 import './Home.css'
 import React from 'react'
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react'
 import Titulo from './Titulo'
 import Favorito from './Favorito'
 import { CreacionesContext } from "../Context/CreacionesContext"
 
-const Home = (props) => {
-    const { creaciones, setCreaciones  } = useContext(CreacionesContext)
+const Home = () => {
+    const { creaciones } = useContext(CreacionesContext)
+
+    useEffect(() => {
+        document.title = `Home`
+    }, [])
 
   return (
     <div className='bottom'>
-        <section>
+        <section className='centrar'>
             <Titulo/>
         </section>
         {creaciones.slice(0, 6).map((creaciones) => 
@@ -22,7 +26,7 @@ const Home = (props) => {
                         <p>{creaciones.descripcion}</p>
                         <p>Lenguaje: {creaciones.leguaje}</p>
                         <p>{creaciones.fecha}</p>
-                        <a className='linkRepositorio' href={creaciones.respositorio} target="_blank">{creaciones.respositorio}</a>
+                        <a className='linkRepositorio' href={creaciones.respositorio} target='_blank'>{creaciones.respositorio}</a>
                         <Favorito id={creaciones.id}/>
                     </div>
                     <div className='separacion'>

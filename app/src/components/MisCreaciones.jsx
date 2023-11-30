@@ -1,10 +1,10 @@
 import './Home.css'
 import Favorito from './Favorito';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { CreacionesContext } from "../Context/CreacionesContext";
 
-const MisCreaciones = (props) => {
-  const { creaciones, setCreaciones } = useContext(CreacionesContext)
+const MisCreaciones = () => {
+  const { creaciones } = useContext(CreacionesContext)
   const elementosPorPagina = 5
   const [paginaActual, setPaginaActual] = useState(1)
 
@@ -17,6 +17,10 @@ const MisCreaciones = (props) => {
   const cambiarPagina = (siguientePag) => {
     setPaginaActual(siguientePag)
   }
+
+  useEffect(() => {
+    document.title = `Todas mis creaciones`
+  }, [])
 
   return (
     <div className='margengrande bottom'>

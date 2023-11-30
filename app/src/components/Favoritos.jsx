@@ -1,13 +1,15 @@
 import './Home.css'
 import React from 'react'
-import { useState, useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { FavoritosContext } from "../Context/FavoritosContext"
 import Favorito from './Favorito'
 
-const Favoritos = (props) => {
+const Favoritos = () => {
   const { favoritos, setFavoritos } = useContext(FavoritosContext)
 
-  console.log('favoritos tiene: ', favoritos)
+  useEffect(() => {
+    document.title = `Tus Favoritos`
+  }, [])
 
   return (
     <div className='margengrande bottom'>

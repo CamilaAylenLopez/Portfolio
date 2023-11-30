@@ -1,8 +1,12 @@
 
 import React from "react"
+import { useEffect } from 'react'
 
+const InfoMia = () => {
 
-const InfoMia = (props) => {
+  useEffect(() => {
+    document.title = `Información sobre mi`
+  }, [])
 
   return (
     <div>

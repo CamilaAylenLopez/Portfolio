@@ -21,7 +21,7 @@ const Titulo = () => {
         });
         currentIndex++;
       }, delay);
-  
+      
       return () => clearInterval(interval);
     }, []);
   return (
