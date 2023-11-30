@@ -46,7 +46,7 @@ footer {
     margin-right: 3rem;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
     .izquierda {
         display: flex;
         align-content: flex-start;
