@@ -1,4 +1,6 @@
 import React from 'react';
+import imgBiblioteca from '../assets/Img/Biblioteca.PNG';
+import imgJuegoMedioAmbiente from '../assets/Img/imgJuegoMedioAmbiente.PNG';
 
 export const CreacionesContext = React.createContext();
 
@@ -10,7 +12,7 @@ const CreacionesProvider = (props) => {
         leguaje: 'c#',
         fecha: 'Fines de 2022',
         respositorio: 'https://github.com/sofygb/TP09',
-        imagen: null
+        imagen: imgBiblioteca
       },
       {
         id: 2,
@@ -19,7 +21,7 @@ const CreacionesProvider = (props) => {
         leguaje: 'JS',
         fecha: 'Septiembre 2023',
         respositorio: 'https://github.com/CamilaAylenLopez/Juego_Medio_Ambiente',
-        imagen: null
+        imagen: imgJuegoMedioAmbiente
       },
       {
         id: 3,

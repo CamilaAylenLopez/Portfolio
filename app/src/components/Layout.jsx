@@ -58,7 +58,7 @@ const Layout = () => {
                                 <p className='redPosicion'>Instagram</p>
                             </div>
                             <div className='espacioFooter'>
-                                <a className="responsiveSiteFooter__socialLink hjgjuf" href="https://www.linkedin.com/">
+                                <a className="responsiveSiteFooter__socialLink hjgjuf" href="www.linkedin.com/in/camila-aylen-lopez-28a67b280">
                                     <img alt="LinkedIn" src="https://s.gr-assets.com/assets/site_footer/footer_linkedin-5b820f4703eff965672594ef4d10e33c.svg" />
                                 </a>
                                 <p className='redPosicion'>Likedin</p>

@@ -11,7 +11,7 @@ const InfoMia = () => {
   return (
     <div>
       <h1 className='margengrande'>Camila Aylen Lopez</h1>
-      <h1 className=''>5IA ORT</h1>
+      <h1 className=''>Graduada de ORT</h1>
       <h1 className=''>2023</h1>
     </div>
   )
