@@ -1,6 +1,7 @@
 import React from 'react';
 import imgBiblioteca from '../assets/Img/Biblioteca.PNG';
 import imgJuegoMedioAmbiente from '../assets/Img/imgJuegoMedioAmbiente.PNG';
+import imgTodoList from '../assets/Img/todoList.PNG';
 
 export const CreacionesContext = React.createContext();
 
@@ -61,12 +62,12 @@ const CreacionesProvider = (props) => {
       },
       {
         id: 7,
-        nombre: 'Lapiz',
-        descripcion: 'Esta página.',
+        nombre: 'TodoList',
+        descripcion: 'Un página para agregar tareas.',
         leguaje: 'JS',
-        fecha: 'Octubre 2023',
-        respositorio: 'https://github.com/CamilaAylenLopez/Portfolio_Camila_Lopez',
-        imagen: null
+        fecha: 'Abril 2023',
+        respositorio: 'https://github.com/CamilaAylenLopez/TODOLIST',
+        imagen: imgTodoList
       },
       {
         id: 8,
